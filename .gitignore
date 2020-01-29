@@ -1,5 +1,4 @@
 obj
-UniveristyRegisterSystem/bin/*.dll
 UniveristyRegisterSystem/bin/*.pdb
 UniveristyRegisterSystem/bin/*.xml
 UniveristyRegisterSystem/bin/*.config
@@ -8,5 +7,4 @@ UniveristyRegisterSystem/obj/*
 packages/*
 .vs
 .git
-*.dll
 *.pdb
