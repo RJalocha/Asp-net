@@ -1,0 +1,65 @@
+﻿@model UniveristyRegisterSystem.Models.Student
+
+@{
+    ViewBag.Title = "Szczegóły studenta";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(model => model.LastName, "Nazwisko:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.FirstName, "Imię:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.EnrollmentDate, "Data dodania:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.Enrollments, "Zajęcia:")
+        </dt>
+        <dd>
+            <br/>
+            <table class="table table-hover table-striped table-bordered">
+                <tr>
+                    <th>Nazwa przedmiotu</th>
+                    <th>Ocena</th>
+                </tr>
+                @foreach (var item in Model.Enrollments)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Course.Title, "Zajęcia")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Grade, "Ocena")
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>

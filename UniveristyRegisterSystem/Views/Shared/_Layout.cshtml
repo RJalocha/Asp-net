@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Student Register Management</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="navbar" style="background-color:aliceblue">
+        <div class="navbar-inner">
+            <div class="container" style="display: flex; align-items: center;">
+                @Html.ActionLink("Student Register", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="btn btn-primary" data-toggle="collapse" data-target=".nav-collapse" style="margin-right: 20px">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </button>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li>@Html.ActionLink("Uczniowie", "Index", "Student")</li>
+                        <li>@Html.ActionLink("Nauczyciele", "Index", "Teacher")</li>
+                        <li>@Html.ActionLink("Zajęcia", "Index", "Course")</li>
+                        <li>@Html.ActionLink("Statystyka studentów", "Statistics", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - University Register System</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
