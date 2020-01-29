@@ -1,0 +1,55 @@
+﻿@model IEnumerable<UniveristyRegisterSystem.Models.Course>
+
+@{
+    ViewBag.Title = "Zajęcia";
+}
+
+<div style="display: flex; align-items: baseline; justify-content: space-between;">
+    <h2>Zajęcia dostępne na uczelni</h2>
+
+    <p>
+        @Html.ActionLink(" Dodaj nowe zajęcie", "Create", null, new { @class = "glyphicon-plus" })
+    </p>
+</div>
+
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credits)
+        </th>
+        <th>
+            Wydział
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edycja", "Edit", new { id = item.CourseID }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.CourseID }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.CourseID })
+            </td>
+        </tr>
+    }
+
+</table>
