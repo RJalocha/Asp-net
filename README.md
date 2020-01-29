@@ -65,7 +65,7 @@ https://mega.nz/#!3IEzSIbT!S3Rdqx7G5YrTY3qpkibYLd8iyF4DZ__hPX8FnJcnUrM
 
 ## Diagram bazy danych
 
-![](database.png)
+![](database.jpg)
 
 ## Autorzy
 
