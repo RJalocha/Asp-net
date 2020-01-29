@@ -1,0 +1,13 @@
+obj
+UniveristyRegisterSystem/bin/*.dll
+UniveristyRegisterSystem/bin/*.pdb
+UniveristyRegisterSystem/bin/*.xml
+UniveristyRegisterSystem/bin/*.config
+UniveristyRegisterSystem/bin/pl/*
+UniveristyRegisterSystem/bin/roslyn/*.dll
+UniveristyRegisterSystem/obj/*
+packages/*
+.vs
+.git
+*.dll
+*.pdb
